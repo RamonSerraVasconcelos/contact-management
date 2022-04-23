@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get("/", [ContactController::class, 'index']);
+
+Route::post("/login", [UserController::class, 'login']);
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('/');
+});
+
 Route::get("contacts/new", function () {
     return view('create');
 });

@@ -60,3 +60,10 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Dropdown Item*/
+
+.login input {
+    width: 30%;
+    padding: 2px;
+}

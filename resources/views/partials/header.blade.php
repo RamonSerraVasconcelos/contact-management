@@ -11,15 +11,14 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             @if (Session::has('user'))
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ Session::get('user')['name'] }}
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/logout">Logout</a></li>
-                    </ul>
-                </li>
+                <a href="/logout"><button type="submit" class="btn btn-danger">Logout</button></a>
             @else
-                <li><a href="/login">Login</a></li>
+                <form class="d-flex login justify-content-end" action="login" method="POST">
+                    @csrf
+                    <input name="email" type="email" class="form-control" placeholder="Email" required>
+                    <input name="password" type="password" class="form-control" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
             @endif
         </ul>
     </div>
