@@ -1,7 +1,7 @@
 @extends('partials/head')
 @section('content')
     <div class="container mt-3">
-        <form class="form-group" action="/contacts/create" method="POST">
+        <form class="form-group" action="http://ramonvasconcelos.eu1.alfasoft.pt/contacts/create" method="POST">
             @csrf
             <label>Name</label>
             <input name="name" type="text" class="form-control" required>

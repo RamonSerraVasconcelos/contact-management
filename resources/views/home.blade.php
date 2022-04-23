@@ -20,7 +20,7 @@
                         <td>{{ $contact['name'] }}</td>
                         <td>{{ $contact['contact'] }}</td>
                         <td>{{ $contact['email'] }}</td>
-                        <td><a href="contacts/edit/{{ $contact['id'] }}"><i class="material-icons">edit</i></a></td>
+                        <td><a href="http://ramonvasconcelos.eu1.alfasoft.pt/contacts/edit/{{ $contact['id'] }}"><i class="material-icons">edit</i></a></td>
                         <td>
                             <form method="POST" action="{{ route('contacts.delete', $contact['id']) }}">
                                 @csrf

@@ -8,11 +8,11 @@
     <title>Contact Management</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
 
-    <script src="{{ asset('js/bootstrap/jquery-3.6.0.js') }}"></script>
-    <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap/jquery-3.6.0.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </div>
     </div>
     {{ View::make('partials/header') }}
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('public/js/script.js') }}"></script>
     @yield('content')
     @if (isset($error))
         <script>
