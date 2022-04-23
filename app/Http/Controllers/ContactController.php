@@ -15,12 +15,6 @@ class ContactController extends Controller
 
     public function create(Request $request)
     {
-
-        if (!$request->session()->has('user')) {
-            $data = Contact::all();
-            return view('create', ['contacts' => $data, 'error' => "Only logged users have access to this functionality"]);
-        }
-
         if (strlen($request->post('name')) <= 5) {
             $data = Contact::all();
             return view('create', ['contacts' => $data, 'error' => "The name must be greater than 5 letters."]);
@@ -42,11 +36,6 @@ class ContactController extends Controller
 
     public function edit(Request $request, $id)
     {
-        if (!$request->session()->has('user')) {
-            $data = Contact::all();
-            return view('home', ['contacts' => $data, 'error' => "Only logged users have access to this functionality"]);
-        }
-
         $data = Contact::find($id);
         return view('edit', ['contact' => $data]);
     }
@@ -69,11 +58,6 @@ class ContactController extends Controller
 
     public function delete(Request $request, $id)
     {
-        if (!$request->session()->has('user')) {
-            $data = Contact::all();
-            return view('home', ['contacts' => $data, 'error' => "Only logged users have access to this functionality"]);
-        }
-
         Contact::find($id)->delete();
 
         return redirect()->back();
