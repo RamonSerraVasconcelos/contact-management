@@ -11,13 +11,27 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('js/bootstrap/jquery-3.6.0.js') }}">
-    <link rel="stylesheet" href="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}">
+    <script src="{{ asset('js/bootstrap/jquery-3.6.0.js') }}"></script>
+    <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
 </head>
 
 <body>
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="d-flex justify-content-center">
+            <div class="modal-content">
+                <span class='info' id="info_mensagem"></span>
+                <span data-dismiss="modal" class="close">&times;</span>
+            </div>
+        </div>
+    </div>
     {{ View::make('partials/header') }}
+    <script src="{{ asset('js/script.js') }}"></script>
     @yield('content')
+    @if (isset($error))
+        <script>
+            mensagem("{{ "$error" }}")
+        </script>
+    @endif
 </body>
 
 </html>
