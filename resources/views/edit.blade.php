@@ -1,15 +1,14 @@
 @extends('partials/head')
 @section('content')
     <div class="container mt-3">
-        <form class="form-group" action="/create" method="POST">
+        <form class="form-group" action="{{ route('contacts.update', $contact['id']) }}" method="POST">
             @csrf
-            <input type="hidden" name="contact_id" value="{{ $contact['id'] }}">
             <label>Name</label>
-            <input type="text" class="form-control" value="{{ $contact['name'] }}">
+            <input name="name" type="text" class="form-control" value="{{ $contact['name'] }}" required>
             <label>Contact Number</label>
-            <input type="text" class="form-control" onkeypress="$(this).mask('00000-0000', {reverse: true});" value="{{ $contact['contact'] }}">
+            <input name="contact" type="text" class="form-control" value="{{ $contact['contact'] }}" maxlength="10" required>
             <label>Email</label>
-            <input type="email" class="form-control" value="{{ $contact['email'] }}">
+            <input name="email" type="email" class="form-control" value="{{ $contact['email'] }}" required>
             <button type="submit" class="btn btn-primary w-100 mt-3">Save</button>
         </form>
     </div>
