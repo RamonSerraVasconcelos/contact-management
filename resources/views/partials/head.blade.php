@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('js/bootstrap/jquery-3.6.0.js') }}">
     <link rel="stylesheet" href="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </head>
 
 <body>
